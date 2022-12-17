@@ -14,7 +14,7 @@ function Home() {
         <>
             <header style={{ minHeight: '15rem' }} className="App-header">
                 <p>
-                    Fake Store
+                    Esto es una prueba de login
                 </p>
             </header>
             {
