@@ -12,6 +12,7 @@ const ProductBoard = ({ products }) => {
             {
                 products.map((item) =>(
                 <TodoCard
+                    key= {item.id}
                     id={item.id}
                     title={item.title}
                     price={item.price}

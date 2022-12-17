@@ -1,10 +1,10 @@
 import { useEffect } from 'react'
-//import ProductBoard from './components/ProductBoard'
+import ProductBoard from './components/ProductBoard'
 import useProduct from '../../hooks/useProduct';
 
 
 function Home() {
-    const { data: products, loading: loadingProducts, getAll: getAllProducts} = useProduct;
+    const { data: products, loading: loadingProducts, getAll: getAllProducts} = useProduct();
 
     useEffect(() => {
         getAllProducts();
@@ -19,9 +19,9 @@ function Home() {
                 </p>
             </header>
             {
-                <li >{products}</li> 
-                //loadingProducts ? <p style={{ color: 'red' }}>Loading...</p>
-                //: <ProductBoard products={products} />
+                //<li >{products}</li> 
+                loadingProducts ? <p style={{ color: 'red' }}>Loading...</p>
+                : <ProductBoard products={products} />
             }
         </>
     )
