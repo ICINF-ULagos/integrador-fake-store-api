@@ -1,16 +1,29 @@
-import { useEffect } from 'react'
-//import ProductBoard from './components/ProductBoard'
+import { useEffect,useState } from 'react'
+import ProductBoard from './components/ProductBoard'
 import useProduct from '../../hooks/useProduct';
 
 
 function Home() {
-    const { data: products, loading: loadingProducts, getAll: getAllProducts} = useProduct;
-
+    const { data: products, loading: loadingProducts, getAll: getAllProducts} = useProduct();
+    const [Filter,setFilter] =useState();
     useEffect(() => {
         getAllProducts();
-        console.log(products)
     }, [])
 
+    const Filtro = (e) => {
+        setFilter(e.target.value)
+      }
+      
+      let results = []
+      
+      if(!Filter){
+      
+        results = products
+      }
+      else{
+        results=products.filter((dato) => dato.title.toLowerCase().includes(Filter.toLowerCase()))
+      }
+    
     return (
         <>
             <header style={{ minHeight: '15rem' }} className="App-header">
@@ -18,10 +31,12 @@ function Home() {
                     home
                 </p>
             </header>
+            <input onChange={Filtro}   placeholder="Buscador" />
+
             {
-                <li >{products}</li> 
-                //loadingProducts ? <p style={{ color: 'red' }}>Loading...</p>
-                //: <ProductBoard products={products} />
+                //<li >{products}</li> 
+                loadingProducts ? <p style={{ color: 'red' }}>Loading...</p>
+                : <ProductBoard products={results} />
             }
         </>
     )
