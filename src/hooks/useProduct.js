@@ -1,5 +1,5 @@
 import {useState} from 'react'
-//import axios from "axios";
+import axios from "axios";
 
 const url = "https://fakestoreapi.com";
 
@@ -9,12 +9,10 @@ const useProduct = () => {
     const [loading, setLoading] = useState(false);
 
     const getAll = () => {
-        //setLoading(true);
+        setLoading(true);
         
-        axios.get(`${url}/products/1`)
+        axios.get(`${url}/products`)
             .then((response) =>{
-                //response = response.ok ? response.data.json() : response.text();
-                console.log(response);
                 setData(response.data);
             })
             .catch((e) => console.log(e))
@@ -22,12 +20,14 @@ const useProduct = () => {
 
     }
 
-    return (
+    return {    
         data,
         setData,
         loading,
         getAll
-    )
+    }
+    
+    
 
 };
 
