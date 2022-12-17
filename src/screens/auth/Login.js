@@ -23,7 +23,7 @@ function Login() {
 
             const result = await login(formValues);
 
-            /* console.log(result) */
+            console.log("wewe--"+result)
 
             navigate('/')
         } catch (error) {
@@ -37,7 +37,7 @@ function Login() {
         
         <Container className='text-center'>
         
-            <Row classname=''>
+            <Row className=''>
                 
                 <Col md={{ span: 4, offset: 5 }} className='border p-5 '>
                 <h1>Bienvenido a Fake-Store!</h1>
@@ -46,7 +46,7 @@ function Login() {
                         <Form.Group className="mb-3 "  controlId="formBasicEmail">
                             
                             <Form.Label>Email</Form.Label>
-                            <Form.Control type="text" name="email" placeholder="Ingresa tu correo" />
+                            <Form.Control type="text" name="username" placeholder="Ingresa tu correo" />
                             <Form.Text className="text-muted">
                                 
                             </Form.Text>

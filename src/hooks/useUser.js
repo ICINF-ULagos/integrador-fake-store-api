@@ -14,7 +14,7 @@ const useUser = () => {
     }
 
 
-    const [datauser, setDataUser]= useState("");
+    const [datauser, setDataUser]= useState([]);
 
     const create = async (user) => {
         const request = await fetch(`${baseUrl}/user/register`, { method: 'POST', headers, body: JSON.stringify(user) });
@@ -40,6 +40,8 @@ const useUser = () => {
         //const [userName, setUserName] = useState('');
         //const [password, setPassword] = useState('');
         //const [error, setError] = useState('');
+        console.log('asdasdasdasdasd')
+       
         
         axios({
             url: "https://fakestoreapi.com/auth/login",
@@ -50,7 +52,6 @@ const useUser = () => {
             //setToken(token)
             console.log(res.data.token)
             setDataUser(res.data)
-           
         }).catch((err)=>{
             console.log(err);
         })
