@@ -21,7 +21,6 @@ const useProduct = () => {
             .finally(() => setLoading(false));
 
     }
-  
     return {
         data,
         setData,
@@ -29,7 +28,7 @@ const useProduct = () => {
         getAll
     }
     
-    
+    } 
 
 };
 

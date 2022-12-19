@@ -1,9 +1,6 @@
 import { useEffect } from 'react'
-<<<<<<< HEAD
-import ProductBoard from './components/Productboard'
-=======
+//import ProductBoard from './components/Productboard'
 import ProductBoard from './components/ProductBoard'
->>>>>>> Diego-Alvarez
 import useProduct from '../../hooks/useProduct';
 
 
@@ -22,11 +19,8 @@ function Home() {
                 </p>
             </header>
             {
-<<<<<<< HEAD
                 //<li key= {products.id}>{products.id}{products.title}{products.price}{products.category}{products.description}{products.image}</li> 
-=======
                 //<li >{products}</li> 
->>>>>>> Diego-Alvarez
                 loadingProducts ? <p style={{ color: 'red' }}>Loading...</p>
                 : <ProductBoard products={products} />
             }

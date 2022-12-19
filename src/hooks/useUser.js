@@ -37,37 +37,20 @@ const useUser = () => {
     }
 
     const loginUser = async (user) => {
-        //const [userName, setUserName] = useState('');
-        //const [password, setPassword] = useState('');
-        //const [error, setError] = useState('');
+
         
-        axios({
+        await axios({
             url: "https://fakestoreapi.com/auth/login",
             method: "POST",
             data:  user,
         }).then(res=>{
-            console.log("REspuesta")
-            //setToken(token)
             console.log(res.data.token)
+           //console.log(res.data)
             setDataUser(res.data)
-           
+
         }).catch((err)=>{
-            console.log(err);
+            console.log('esto es un error de hook');
         })
-        
-        //const request = await fetch(`${baseUrl}/user/login`, { method: "POST", body: JSON.stringify(user), headers })
-        //const response = request.ok ? await response.json() : await response.text();
-
-        /* if (!request.ok) {
-            throw new Error(response);
-        }
-
-        sessionStorage.setItem("user", JSON.stringify(response.user));
-        sessionStorage.setItem("token", response.token);
-        setCurrentUser({
-            ...response.user,
-            token: response.token
-        }); */
 
         
     }
@@ -87,7 +70,7 @@ const useUser = () => {
         remove,
         update: updateUser,
         login: loginUser,
-        logout: logoutUser
+        
     };
 }
 
