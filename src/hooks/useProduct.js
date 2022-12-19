@@ -8,13 +8,10 @@ const useProduct = () => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
 
-<<<<<<< HEAD
     const getAll = () => {
         setLoading(true);
-=======
     const getAll =  () => {
         //setLoading(true);
->>>>>>> Diego-Alvarez
         
         axios.get(`${url}/products`)
             .then((response) =>{
@@ -24,22 +21,15 @@ const useProduct = () => {
             .finally(() => setLoading(false));
 
     }
-
-<<<<<<< HEAD
-    return {    
-=======
+  
     return {
->>>>>>> Diego-Alvarez
         data,
         setData,
         loading,
         getAll
     }
-<<<<<<< HEAD
     
     
-=======
->>>>>>> Diego-Alvarez
 
 };
 
