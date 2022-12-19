@@ -43,19 +43,23 @@ const useUser = () => {
         console.log('asdasdasdasdasd')
        
         
-        axios({
+        const response = axios({
             url: "https://fakestoreapi.com/auth/login",
             method: "POST",
-            data:  user,
+            data:   user,
         }).then(res=>{
             console.log("REspuesta")
             //setToken(token)
             console.log(res.data.token)
             setDataUser(res.data)
+            return res.data.token
+           
         }).catch((err)=>{
             console.log(err);
         })
         
+        
+        return response;
         //const request = await fetch(`${baseUrl}/user/login`, { method: "POST", body: JSON.stringify(user), headers })
         //const response = request.ok ? await response.json() : await response.text();
 
