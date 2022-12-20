@@ -14,9 +14,11 @@ const TodoCard = (props) => {
                 <p>{props.description}</p>
             </div>
             <div className="card-price-add">
+            
                 <span>Price : ${props.price}</span>
+                <button type="button" className="btn btn-success">Agregar producto</button>
+                
             </div>
-            <button type="button" className="btn btn-success">Agregar producto</button>
         </div>
         </>
     )

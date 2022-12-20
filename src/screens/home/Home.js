@@ -28,15 +28,22 @@ function Home() {
     return (
         <>
             
-            <header style={{ minHeight: '15rem' }} className="App-header">
-                <nav className='navbar navbar-expand-lg navbar-light'>
-                    <div style={{ margin: '30px', color: '#4285f4', fontFamily: 'cursive', fontSize: '60px'}}>
-                        <p>
+            <header style={{ minHeight: '15rem'}} className="App-header">
+                <nav className='navbar navbar-expand-lg navbar-light' style={{background: 'white', paddingRight: '30px', width: '100%', borderRadius: '20px'}}>
+                    <div >
+                        <p style={{ margin: '30px', color: '#4285f4', fontFamily: 'cursive', fontSize: '50px'}}>
                             Fake Store
                         </p>
                     </div>
-                    <input onChange={Filtro}   placeholder="Buscador" />
-                    
+                    <input onChange={Filtro}   placeholder="Buscador" style={{ marginRight: '200px'}}/>
+                    <div style={{ left:'200px'}}>
+                        <div>
+                        Tu Carro de productos:
+                        <span style={{ height: '40px', width: '40px', backgroundColor: 'red', borderRadius: '50%', display: 'inline-block', marginLeft: '10px', color: 'white'}}>
+                            0</span>
+                        </div>
+                        <a href="#">Comprar</a>
+                    </div>
                 </nav>
             </header>
             <div style={{ height: 'auto', width: '1200px'}}>

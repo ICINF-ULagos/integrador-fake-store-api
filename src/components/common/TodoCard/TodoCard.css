@@ -16,11 +16,13 @@
 }
 .card p {
   color: var(--soft-color);
+  font-size: small;
 }
 .card h4,
 p {
   color: var(--soft-color);
   margin: 0.5rem auto;
+  
 }
 .card h2 {
   color: var(--soft-color);
