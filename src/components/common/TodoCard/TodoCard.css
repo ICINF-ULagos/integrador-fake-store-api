@@ -31,7 +31,7 @@ p {
   transform: scale(1.01);
 }
 .card-price-add {
-  color: var(--soft-color);
+  color: var(green);
   display: flex;
   align-items: center;
   justify-content: space-between;

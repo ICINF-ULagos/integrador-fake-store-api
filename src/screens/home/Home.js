@@ -29,14 +29,19 @@ function Home() {
         <>
             
             <header style={{ minHeight: '15rem' }} className="App-header">
-                {<input onChange={Filtro}   placeholder="Buscador" />}
-                <p>
-                    Esto es una prueba de login
-                </p>
+                <nav className='navbar navbar-expand-lg navbar-light'>
+                    <div style={{ margin: '30px', color: '#4285f4', fontFamily: 'cursive', fontSize: '60px'}}>
+                        <p>
+                            Fake Store
+                        </p>
+                    </div>
+                    <input onChange={Filtro}   placeholder="Buscador" />
+                    
+                </nav>
             </header>
             <div style={{ height: 'auto', width: '1200px'}}>
             {
-                loadingProducts ? <p style={{ color: 'red' }}>Loading...</p>
+                loadingProducts ? <p style={{ color: 'black' }}>Loading...</p>
                 : <ProductBoard products={results} />
             
             }
