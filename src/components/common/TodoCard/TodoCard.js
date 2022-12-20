@@ -1,6 +1,6 @@
 
 
-const TodoCard = ({props}) => {
+const TodoCard = (props) => {
 
 
     return (

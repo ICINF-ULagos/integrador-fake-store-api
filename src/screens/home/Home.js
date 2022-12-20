@@ -1,28 +1,33 @@
 import { useEffect,useState } from 'react'
 import ProductBoard from './components/ProductBoard'
 import useProduct from '../../hooks/useProduct';
+import Search from './Search'
+
 
 
 function Home() {
-    const { data: products, loading: loadingProducts, getAll: getAllProducts} = useProduct();
+    const { data: productos, loading: loadingProducts, getAll: getAllProducts, resultsf: productsHooks , Buscador: BuscadorHome} = useProduct();
+    
     const [Filter,setFilter] =useState();
+
     useEffect(() => {
         getAllProducts();
     }, [])
 
     const Filtro = (e) => {
         setFilter(e.target.value)
+        const resul = BuscadorHome(e.target.value, productos) 
       }
       
-      let results = []
+      //let results = []
       
-      if(!Filter){
+      //if(!Filter){
       
-        results = products
-      }
-      else{
-        results=products.filter((dato) => dato.title.toLowerCase().includes(Filter.toLowerCase()))
-      }
+        //results = products
+      //}
+      //else{
+        //results=products.filter((dato) => dato.title.toLowerCase().includes(Filter.toLowerCase()))
+      //}
     
     return (
         <>
@@ -36,7 +41,7 @@ function Home() {
             {
                 //<li >{products}</li> 
                 loadingProducts ? <p style={{ color: 'red' }}>Loading...</p>
-                : <ProductBoard products={results} />
+                : <ProductBoard products={productos} />
             }
         </>
     )

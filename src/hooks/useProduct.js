@@ -1,5 +1,5 @@
 import {useState} from 'react'
-//import axios from "axios";
+import axios from "axios";
 
 const url = "https://fakestoreapi.com";
 
@@ -11,7 +11,7 @@ const useProduct = () => {
     const getAll = () => {
         //setLoading(true);
         
-        axios.get(`${url}/products/1`)
+        axios.get(`${url}/products`)
             .then((response) =>{
                 //response = response.ok ? response.data.json() : response.text();
                 console.log(response);
@@ -22,12 +22,45 @@ const useProduct = () => {
 
     }
 
-    return (
+    const [resultsf,setResultsf]=useState([]);
+
+
+
+    const [Filter,setFilter] =useState();
+    const Buscador = (evento,products)=>{
+    
+        
+    
+        setFilter(evento)
+        console.log('Si paso por Seach')
+        let results = []
+    
+        if(!Filter){
+          
+            results = products
+        }
+        else{
+            results=products.filter((dato) => dato.title.toLowerCase().includes(Filter.toLowerCase()))
+          }
+        setResultsf(results)
+        setData(results)
+        
+        //return{
+        //    products,Filter,setFilter
+        //}
+            
+        
+    
+    }
+
+    return {
         data,
         setData,
         loading,
-        getAll
-    )
+        getAll,
+        resultsf,
+        Buscador
+    }
 
 };
 
