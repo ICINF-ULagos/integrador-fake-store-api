@@ -1,10 +1,10 @@
 import TodoCard from '../../../components/common/TodoCard/TodoCard'
+import './CardProduct.css'
 
 const ProductBoard = ({ products }) => {
     return (
-        <div className='conteiner'>
-            <div className='row'>
-                <div className='card-group mt-3 md.3'>
+        <div className='cardBody'>
+            
                     {
                         products.map((item) =>
                             <TodoCard
@@ -18,8 +18,7 @@ const ProductBoard = ({ products }) => {
                             />
                         )
                     }
-                </div>
-            </div>
+            
         </div>
     )
 }
