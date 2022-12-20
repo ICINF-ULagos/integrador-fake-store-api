@@ -1,30 +1,55 @@
-import { useEffect } from 'react'
-//import ProductBoard from './components/ProductBoard'
+import { useEffect,useState } from 'react'
+import ProductBoard from './components/ProductBoard'
 import useProduct from '../../hooks/useProduct';
 
 
 function Home() {
-    const { data: products, loading: loadingProducts, getAll: getAllProducts} = useProduct;
+    const { data: products, loading: loadingProducts, getAll: getAllProducts} = useProduct();
 
+    const [Filter,setFilter] =useState();
     useEffect(() => {
         getAllProducts();
-        console.log(products)
     }, [])
 
+    const Filtro = (e) => {
+        setFilter(e.target.value)
+    }
+    
+    let results = []
+    
+    if(!Filter){
+    
+    results = products
+    }
+    else{
+    results=products.filter((dato) => dato.title.toLowerCase().includes(Filter.toLowerCase()))
+    }
+    
     return (
         <>
+            
             <header style={{ minHeight: '15rem' }} className="App-header">
-                <p>
-                    home
-                </p>
+                <nav className='navbar navbar-expand-lg navbar-light'>
+                    <div style={{ margin: '30px', color: '#4285f4', fontFamily: 'cursive', fontSize: '60px'}}>
+                        <p>
+                            Fake Store
+                        </p>
+                    </div>
+                    <input onChange={Filtro}   placeholder="Buscador" />
+                    
+                </nav>
             </header>
+            <div style={{ height: 'auto', width: '1200px'}}>
             {
-                <li >{products}</li> 
-                //loadingProducts ? <p style={{ color: 'red' }}>Loading...</p>
-                //: <ProductBoard products={products} />
+                loadingProducts ? <p style={{ color: 'black' }}>Loading...</p>
+                : <ProductBoard products={results} />
+            
             }
+            
+            </div>
         </>
     )
 }
 
 export default Home;
+
