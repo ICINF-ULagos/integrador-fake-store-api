@@ -6,6 +6,7 @@ const useUser = () => {
 
     const [currentUser, setCurrentUser] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [token, setToken]= useState("");
 
     const baseUrl = "https://api-nodejs-todolist.herokuapp.com";
     const headers = {
@@ -49,7 +50,7 @@ const useUser = () => {
             data:   user,
         }).then(res=>{
             console.log("REspuesta")
-            //setToken(token)
+            setToken(res.data.token)
             console.log(res.data.token)
             setDataUser(res.data)
             return res.data.token
@@ -86,6 +87,7 @@ const useUser = () => {
     return {
         currentUser,
         datauser,
+        token,
         setCurrentUser,
         loading,
         create,

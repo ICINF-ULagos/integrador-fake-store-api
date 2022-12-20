@@ -22,8 +22,8 @@ function Login() {
             const formData = new FormData(event.target);
             const formValues = Object.fromEntries(formData); // PARSE JSON
 
-            //const result = await login(formValues);
-            const result = await axios({
+            const result = await login(formValues);
+            /* const result = await axios({
                 url: "https://fakestoreapi.com/auth/login",
                 method: "POST",
                 data:   formValues,
@@ -34,17 +34,25 @@ function Login() {
             }).catch((error)=>{
                 console.log(error)
             })
+            if(result.ok){
+               console.log("ewewew")
+            }
             console.log("Token desde ")
             console.log(token)
             
             
-            navigate('/')
+            navigate('/')*/
         } catch (error) {
             console.info(error.message)
             console.error(error)
             setMessage(error.message)
-        }
+        } 
+            navigate("/");
         
+        
+    }
+    const navig = ()=>{
+        navigate("/Home");
     }
 
     return (<div>
@@ -75,6 +83,10 @@ function Login() {
                             Enviar
                         </Button>
                     </Form>
+
+                    <Button onClick={navig}>
+  Activate navigate
+</Button>
                 </Col>
             </Row>
         </Container>
