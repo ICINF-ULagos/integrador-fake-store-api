@@ -1,7 +1,9 @@
 import TodoCard from '../../../components/common/TodoCard/TodoCard'
+import './CardProduct.css'
 
 const ProductBoard = ({ products }) => {
     return (
+
         <main style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fill, minmax(15rem, 1fr))',
@@ -23,6 +25,9 @@ const ProductBoard = ({ products }) => {
                 ))
             }
         </main>
+
+      
+
     )
 }
 
