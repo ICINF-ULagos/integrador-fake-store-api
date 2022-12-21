@@ -8,12 +8,8 @@ const useProduct = () => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
 
-
-   
-
     const getAll = () => {
         setLoading(true);
-
         
         axios.get(`${url}/products`)
             .then((response) =>{
@@ -24,16 +20,48 @@ const useProduct = () => {
 
     }
 
+    const [resultsf,setResultsf]=useState([]);
 
 
-    return {    
 
+    const [Filter,setFilter] =useState();
+    const Buscador = (evento,products)=>{
+    
+        
+    
+        setFilter(evento)
+        console.log('Si paso por Seach')
+        let results = []
+    
+        if(!Filter){
+          
+            results = products
+        }
+        else{
+            results=products.filter((dato) => dato.title.toLowerCase().includes(Filter.toLowerCase()))
+          }
+        setResultsf(results)
+        setData(results)
+
+            
+        
+    
+    }
+    
+
+    return {
         data,
         setData,
         loading,
-        getAll
-    }
+        getAll,
+        resultsf,
+        Buscador,
+      
+    
 
+    }
+    
+    
     
 
 };

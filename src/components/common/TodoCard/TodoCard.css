@@ -10,6 +10,7 @@
   justify-content: space-between;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   
+  
 }
 
 .card__img {
@@ -18,11 +19,13 @@
 }
 .card p {
   color: var(--soft-color);
+  font-size: small;
 }
 .card h4,
 p {
   color: var(--soft-color);
   margin: 0.5rem auto;
+  
 }
 .card h2 {
   color: var(--soft-color);
