@@ -24,7 +24,7 @@ function Home() {
 
     
     const {token: tokenuser, logout: logOut} = useUser();
-    
+    const token = localStorage.getItem('Token');
 
 
     const { data: products, loading: loadingProducts, getAll: getAllProducts,prueba:productsHooks} = useProduct();
@@ -168,7 +168,11 @@ function Home() {
                     </div>
 
                 </nav>
-                <button className='btn-borde' onClick={logOut}  >Cerrar sesión</button>    
+                
+                {
+                    token!=null ? <button className='btn-borde' onClick={logOut}  >Cerrar sesión</button> : null
+                  
+                     } 
             </header>
 
             

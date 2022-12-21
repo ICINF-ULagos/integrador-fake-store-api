@@ -11,7 +11,7 @@ import axios from 'axios';
 
 function Login() {
     const [message, setMessage] = useState(null);
-    const [token, setToken] = useState(localStorage.getItem('userToken') ?? null);
+    const [token, setToken] = useState(localStorage.getItem('Token') ?? null);
     const navigate = useNavigate();
     const { login } = useUser();
 
