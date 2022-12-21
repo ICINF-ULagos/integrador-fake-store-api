@@ -4,13 +4,12 @@ import './CardProduct.css'
 
 
 const ProductBoard = ({ products }) => {
-    const [allproducts,setAllproducts] = useState([])
     return (
         <div className='cardBody'>
             
                     {
                         products.map((item) =>
-                            <TodoCard allproducts={allproducts} setAllproducts={setAllproducts}
+                            <TodoCard
                                 key={item.id}
                                 id={item.id}
                                 title={item.title}

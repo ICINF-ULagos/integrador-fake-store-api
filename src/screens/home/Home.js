@@ -20,7 +20,7 @@ function Home() {
     const [Filter,setFilter] =useState();
     const [active,setActive]= useState(false);
     
-    const navigate = useNavigate()
+    //const navigate = useNavigate()
 
 
     useEffect(() => {
@@ -44,12 +44,12 @@ function Home() {
      //                       0</span>
 
     const handle = () =>{
-        navigate('/login')
+        //navigate('/login')
     }
     return (
         <>
             
-            <header style={{ minHeight: '15rem'}} className="App-header">
+            <header style={{ minHeight: '15rem'}} className="App-header2">
                 <nav className='navbar navbar-expand-lg navbar-light' style={{background: 'white', paddingRight: '30px', width: '100%', borderRadius: '20px'}}>
                     <div >
                         <p style={{ margin: '30px', color: '#4285f4', fontFamily: 'cursive', fontSize: '50px'}}>

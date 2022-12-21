@@ -28,11 +28,7 @@ img{
 }
 
 /* Header */
-header{
-    display: flex;
-    justify-content: space-between;
-    padding: 30px 0 40px 0;
-}
+
 
 .container-icon{
     position: relative;
@@ -41,7 +37,8 @@ header{
 .count-products{
     position: absolute;
     top: 55%;
-    right: 0;
+    left:1%;
+    
 
     background-color: #000;
     color: #fff;
@@ -198,4 +195,7 @@ header{
 
 .hidden{
     display: none;
+}
+.container-cart-icon{
+    display: flex;
 }
