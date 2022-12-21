@@ -16,6 +16,8 @@ import Home from './screens/home/Home'
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import purchaseUser from "./screens/Purchase/purchaseUser";
+import { unstable_renderSubtreeIntoContainer } from "react-dom";
 
 
 function Dashboard() {
@@ -26,19 +28,24 @@ function About() {
   return (<div>About</div>)
 }
 
+
+
+
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path="/login" element={<Login />} />
       <Route  path="/register" element={<Register />} />
-     {/*  <Route  path="/home" element={<PrivateRoute><Home /></PrivateRoute>} /> */}
-      <Route path="/" element={<Layout />}>
-        <Route index  element={<PrivateRoute><Home /></PrivateRoute>} />
-        <Route path="about" element={<About />} />
-        {/* <Route path="about" element={<PrivateRoute><About /></PrivateRoute>} /> */}
-        <Route path="dashboard" element={<Dashboard />} />
-        <Route path="*" element={<NoMatch />} />
-      </Route>
+      {/* <Route  path="/home" element={<PrivateRoute><Home /></PrivateRoute>} /> */}
+     {/*  <Route  path="/purchaseUser" element={<PrivateRoute><PurchaseUser /></PrivateRoute>} /> */}
+       <Route path="/" element={<Layout />}>
+          <Route index  element={<PrivateRoute><Home /></PrivateRoute>} />
+          
+          <Route path="about" element={<PrivateRoute><About /></PrivateRoute>} /> 
+          {/* <Route path="dashboard" element={<Dashboard />} /> */}
+          <Route path="*" element={<NoMatch />} />
+      </Route> 
     </>
   )
 );

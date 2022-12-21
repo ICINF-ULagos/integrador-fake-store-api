@@ -1,5 +1,5 @@
 
-import { useEffect } from 'react'
+
 
 import { useEffect,useState } from 'react'
 
@@ -11,7 +11,7 @@ import useUser from '../../hooks/useUser';
 
 function Home() {
     const { data: products, loading: loadingProducts, getAll: getAllProducts} = useProduct();
-    const {token: tokenuser} = useUser();
+    const {token: tokenuser, logout: logOut} = useUser();
     
 
 
@@ -46,7 +46,8 @@ function Home() {
                         </p>
                     </div>
                     <input onChange={Filtro}   placeholder="Buscador" />
-                    
+                    {/*  */}
+                    <button className='btn-borde' onClick={logOut}  >Cerrar sesión</button>
                 </nav>
             </header>
 
@@ -55,10 +56,10 @@ function Home() {
             
                 
                 
-                //<li >{products}</li> 
-                /* loadingProducts ? <p style={{ color: 'red' }}>Loading...</p>
-                : <ProductBoard products={products} /> */
-
+               {/*  <li >{products}</li>  */}
+                 {/* loadingProducts ? <p style={{ color: 'red' }}>Loading...</p>
+                : <ProductBoard products={products} />
+ */}
                 
 
             <div style={{ height: 'auto', width: '1200px'}}>

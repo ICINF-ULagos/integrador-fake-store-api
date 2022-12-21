@@ -22,26 +22,24 @@ function Login() {
             const formData = new FormData(event.target);
             const formValues = Object.fromEntries(formData); // PARSE JSON
 
-            const result = await login(formValues);
-            /* const result = await axios({
+            //const result = await login(formValues);
+            const result = await axios({
                 url: "https://fakestoreapi.com/auth/login",
                 method: "POST",
                 data:   formValues,
             }).then((res)=>{
                 setToken(res.data.token);
                 console.log(res.data.token)
-                localStorage.setItem("userToken",res.data.token)
+                localStorage.setItem("Token",res.data.token)
             }).catch((error)=>{
                 console.log(error)
             })
-            if(result.ok){
-               console.log("ewewew")
-            }
-            console.log("Token desde ")
-            console.log(token)
+            
+            /* console.log("Token desde ")
+            console.log(token) */
             
             
-            navigate('/')*/
+            navigate('/')
         } catch (error) {
             console.info(error.message)
             console.error(error)

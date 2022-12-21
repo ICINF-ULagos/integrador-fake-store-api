@@ -1,13 +1,15 @@
-import { Navigate } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 
-const PrivateRoute = ({ children }) => {
-    const token = sessionStorage.getItem('token');
+const PrivateRoute = () => {
+    const token = sessionStorage.getItem('Token');
 
     if (!token) {
         // user is not authenticated
         return <Navigate to="/login" />;
     }
-    return children;
+    return (
+        <Outlet/>
+    )
 }
 
 

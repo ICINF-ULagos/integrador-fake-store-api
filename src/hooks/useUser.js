@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useState } from 'react';
+import { Navigate } from 'react-router-dom';
 
 
 const useUser = () => {
@@ -79,9 +80,8 @@ const useUser = () => {
     }
 
     const logoutUser = async () => {
-        const request = await fetch(`${baseUrl}/user/logout`, { method: 'POST', headers });
-        const response = request.ok ? await request.json() : await request.text();
-        console.log(response)
+        localStorage.removeItem("Token");
+        Navigate("/login")
     }
 
     return {

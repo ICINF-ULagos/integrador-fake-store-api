@@ -1,9 +1,9 @@
 import './TodoCard.css'
 
-<<<<<<< HEAD
 
-=======
->>>>>>> Esteban-Lagos
+
+
+
 const TodoCard = (props) => {
 
 
