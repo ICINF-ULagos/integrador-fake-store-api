@@ -50,14 +50,30 @@ const useProduct = () => {
         
     
     }
+    
+    const [prueba,setPrueba] = useState([])
 
+    const AgregarProducto = (props)=> {
+        console.log(props.id)
+ 
+       // props.setAllproducts([...allproducts,props.id])
+       setPrueba([...props.allproducts,props.id])
+        //console.log(allproducts)
+        //console.log('paso Useproduct')
+        
+
+    }
     return {
         data,
         setData,
         loading,
         getAll,
         resultsf,
-        Buscador
+        Buscador,
+        AgregarProducto,
+        prueba
+       // allproducts
+
     }
     
     

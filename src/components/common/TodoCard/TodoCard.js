@@ -1,11 +1,16 @@
 import './TodoCard.css'
+import { useContext, useState } from 'react'
+import useProduct from '../../../hooks/useProduct'
+import CartContext from '../../../context/cart/CartContext'
+
 
 const TodoCard = (props) => {
 
+    const {addToCart} = useContext(CartContext)
 
     return (
         <>
-        
+    
         <div className="card">
             <img className="card__img" src={props.image} alt="" />
             <div>
@@ -16,12 +21,14 @@ const TodoCard = (props) => {
             <div className="card-price-add">
             
                 <span>Price : ${props.price}</span>
-                <button type="button" className="btn btn-success">Agregar producto</button>
+                <button onClick={() =>addToCart(props)} type="button" className="btn btn-success">Agregar producto</button>
                 
             </div>
         </div>
         </>
+        
     )
 } 
+
 
 export default TodoCard;
